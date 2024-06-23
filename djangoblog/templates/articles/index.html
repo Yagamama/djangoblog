@@ -9,6 +9,16 @@
 <body>
     <div class="p-4">
         <h3>Работает приложение {{ name }}</h3>
+        <table>
+            {% for a in article %}
+                <tr>
+                    <td>{{ a.id }}</td>
+                    <td>{{ a.name }}</td>
+                    <td>{{ a.body }}</td>
+                    <td>{{ a.created_at }}</td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
 </body>
 </html>
