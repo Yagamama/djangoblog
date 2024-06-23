@@ -17,5 +17,6 @@ class ArticleView(View):
         return render(request, 'articles/index.html', context={'name': name, 'article': a})
     
 
-def article_id(request, tag, article_id):
-    return render(request, 'articles/index.html', context={'tag': tag, 'id': article_id})
+def article_id(request, article_id):
+    a = Article.objects.filter(id=article_id).first()
+    return render(request, 'articles/art.html', context={'article': a})
